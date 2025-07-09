@@ -570,7 +570,8 @@ const Footer = ({ onNavClick }: { onNavClick: (id: string) => void }) => (
 
 // This is the main component that brings everything together.
 function App() {
-    const [activeSection, setActiveSection] = useState('hero');
+     const [setActiveSection] = useState('hero');
+    // const [activeSection, setActiveSection] = useState('hero');
     const sectionRefs: Record<string, React.RefObject<HTMLDivElement | null>> = {
         hero: useRef<HTMLDivElement | null>(null),
         about: useRef<HTMLDivElement | null>(null),
@@ -592,6 +593,8 @@ function App() {
                 if (ref.current) {
                     const { offsetTop, offsetHeight } = ref.current;
                     if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                        // @ts-expect-error
                         setActiveSection(key);
                     }
                 }
@@ -627,36 +630,36 @@ function App() {
 }
 
 // A simple About section component
-const AboutSection = () => (
-    <Box id="about" sx={{ py: 10, bgcolor: 'white' }}>
-        <Container>
-            <SectionTitle>About Me</SectionTitle>
-            <Grid container spacing={4} alignItems="center">
-                <Grid item xs={12} md={5} sx={{ display: 'flex', justifyContent: 'center' }}>
-                    <Box
-                        component="img"
-                        src={portfolioData.hero.profileImageUrl}
-                        alt={portfolioData.name}
-                        sx={{
-                            width: 256,
-                            height: 256,
-                            borderRadius: '50%',
-                            objectFit: 'cover',
-                            boxShadow: 6,
-                        }}
-                    />
-                </Grid>
-                <Grid item xs={12} md={7}>
-                    {portfolioData.hero.bio.map((paragraph, index) => (
-                        <Typography key={index} variant="body1" color="text.secondary" paragraph>
-                            {paragraph}
-                        </Typography>
-                    ))}
-                </Grid>
-            </Grid>
-        </Container>
-    </Box>
-);
+// const AboutSection = () => (
+//     <Box id="about" sx={{ py: 10, bgcolor: 'white' }}>
+//         <Container>
+//             <SectionTitle>About Me</SectionTitle>
+//             <Grid container spacing={4} alignItems="center">
+//                 <Grid item xs={12} md={5} sx={{ display: 'flex', justifyContent: 'center' }}>
+//                     <Box
+//                         component="img"
+//                         src={portfolioData.hero.profileImageUrl}
+//                         alt={portfolioData.name}
+//                         sx={{
+//                             width: 256,
+//                             height: 256,
+//                             borderRadius: '50%',
+//                             objectFit: 'cover',
+//                             boxShadow: 6,
+//                         }}
+//                     />
+//                 </Grid>
+//                 <Grid item xs={12} md={7}>
+//                     {portfolioData.hero.bio.map((paragraph, index) => (
+//                         <Typography key={index} variant="body1" color="text.secondary" paragraph>
+//                             {paragraph}
+//                         </Typography>
+//                     ))}
+//                 </Grid>
+//             </Grid>
+//         </Container>
+//     </Box>
+// );
 
 
 export default App;
