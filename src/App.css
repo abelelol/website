@@ -1,0 +1,104 @@
+/* Remove default Vite styles if they exist */
+#root {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+/*#root {*/
+/*  max-width: none;*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  text-align: left;*/
+/*  width: 100%;*/
+
+/*}*/
+
+/* Smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom styles for the navigation link underline effect */
+.nav-link {
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #3b82f6; /* primary color */
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Styles for the Experience section timeline */
+.timeline-container {
+  position: relative;
+  padding-left: 3rem; /* Space for the timeline line and dots */
+}
+
+/* The vertical line of the timeline */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 8px; /* Centered on the dot */
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #e5e7eb; /* grey-200 */
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+/* The dot on the timeline */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -36px; /* Position it to the left of the item */
+  top: 8px; /* Align with the top of the card title */
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #3b82f6; /* primary color */
+  border: 3px solid white;
+  z-index: 1;
+}
+
+/* Hide the line on the last item */
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Project card overlay for hover effect */
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card .project-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(59, 130, 246, 0.8); /* primary color with opacity */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
