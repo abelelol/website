@@ -50,8 +50,18 @@ const portfolioData = {
         heroImageUrl: "https://readdy.ai/api/search-image?query=modern%20abstract%20technology%20background%20with%20blue%20gradient%2C%20subtle%20code%20patterns%2C%20minimalist%20design%2C%20perfect%20for%20software%20engineer%20portfolio%2C%20left%20side%20has%20clean%20empty%20space%20for%20text%2C%20right%20side%20has%20abstract%20tech%20elements%2C%20professional%20look&width=1920&height=1080&seq=hero1&orientation=landscape"
     },
     skills: {
-        languages: ["JavaScript/TypeScript", "Python", "Java", "Go", "SQL"],
-        frameworks: ["React/Next.js", "Node.js/Express", "Docker/Kubernetes", "AWS/GCP", "MongoDB/PostgreSQL"]
+        languages: ["TypeScript/JavaScript", "Java", "Python", "Kotlin", "SQL"],
+        frameworks: [
+            "Angular",
+            "Node.js/Express.js",
+            "Spring Boot",
+            "Supabase",
+            "Firebase Cloud Functions",
+            "PostgreSQL",
+            "Kubernetes",
+            "Docker",
+            "Android"
+        ]
     },
     experience: [
         {
